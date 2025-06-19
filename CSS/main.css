@@ -1,0 +1,455 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-background-color: rgb(30 , 30, 30);
+    --main-color: white ;
+    --main-grey: rgb(50, 50, 50) ;
+    --main-transition: 0.3s ;
+    --main-green: greenyellow ;
+}
+
+body {
+    font-family: 'Raleway' , sans-serif;
+    background-color: var(--main-background-color);
+    color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(9, 92, 92);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(159, 0, 90);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+@media(min-width: 767px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media(min-width: 992px) {
+    .container {
+        width: 990px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .container {
+        width: 1199px;
+    }
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.title {
+    width: fit-content;
+    padding: 15px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+}
+
+.active {
+    color: var(--main-green) !important ;
+    background-color: var(--main-background-color) !important ;
+}
+
+/* .morning {
+    background-color: rgb(230, 230, 230);
+    color: black;
+} */
+
+#btn {
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 15px;
+    right: 10px
+}
+
+/* ======================================================== */
+
+/* start Header  */
+
+header {
+    position: relative;
+}
+
+header .container {
+    position: relative;
+    background-color: var(--main-grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container ul {
+    list-style: none;
+    display: flex;
+    position: relative;
+}
+
+header .container ul li {
+    position: relative;
+}
+
+header .container ul li a {
+    padding: 15px;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: var(--main-transition);
+}
+
+header .container ul li a:hover {
+    background-color: var(--main-background-color);
+    color: var(--main-green);
+}
+
+header .container .menu {
+    font-size: x-large;
+    display: none;
+    position: relative;
+}
+
+@media(max-width:660px){
+    header .container .menu {
+        display: block;
+    }
+    header .container ul {
+        display: none;
+    }
+    header .container .menu:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.89);
+        z-index: 1;
+    }
+}
+
+header .container .menu:hover+ul li {
+    padding: 15px 15px 15px 5px;
+}
+
+header .container .menu:hover+ul li {
+    border-bottom: 1px solid white;
+}
+
+/* Notes : 
+
+-- Repair the "ul" while hover on menu ;
+-- add search icon ;
+-- add LOGO ;
+
+*/
+
+/* end Header  */
+
+/* start land  */
+
+.land {
+    position: relative;
+    overflow: hidden;
+}
+
+.land .container {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.land .container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 50, 50, 0.488);
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+@media(max-width:767px) {
+    .land .container {
+        flex-direction: column;
+    }
+    .land .container .text {
+        padding-bottom: 50px;
+    }
+}
+
+.land .container .text {
+    max-width: 270px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.land .container .image img {
+    width: 200px;
+    height: 200px;
+}
+
+/* end land  */
+
+/* start info  */
+
+.info {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.info .container .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(260px , 1fr));
+    gap: 30px;
+}
+
+.info .container .boxes .box {
+    position: relative;
+    box-shadow: 0px 0px 15px white;
+    min-height: 400px;
+}
+
+.info .container .boxes .box .image img{
+    width: 100%;
+    height: 200px;
+    border-radius: 0;
+}
+
+.info .container .boxes .box .text {
+    text-align: center;
+    line-height: 1.8;
+    padding: 10px 10px 30px 10px;
+}
+
+/* end info  */
+
+/* start team  */
+
+.team {
+    position: relative;
+}
+
+.team .container {
+    padding-top: 50px;
+    background-color: var(--main-grey);
+}
+
+.team .container .boxes .box {
+    display: flex;
+    border: 3px solid grey;
+    margin-bottom: 30px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 1px 25px black;
+}
+
+@media(max-width:700px) {
+    .team .container .boxes .box {
+        flex-direction: column;
+    }
+    .team .container .boxes .box .left {
+        border-bottom: 1px solid white;
+        border-right: none;
+    }
+}
+
+.team .container .boxes .box .text {
+    flex: 1;
+    padding: 15px;
+    line-height: 1.8;
+}
+
+.team .container .boxes .box .left {
+    border-right: 1px solid white;
+    padding: 25px;
+    text-align: center;
+}
+
+.team .container .boxes .box .left .head img {
+    width: 100px;
+    height: 100px;
+    margin: 25px 0px;
+}
+
+.team .container .boxes .box .left .icons i {
+    color: gold;
+}
+
+/* end team  */
+
+/* start courses  */
+
+.courses {
+    position: relative;
+}
+
+.courses .container .boxes {
+    grid-template-columns: repeat( auto-fill , minmax(250px , 1fr));
+    gap: 30px;
+}
+
+.courses .container .boxes .box {
+    border: 2px solid white;
+    margin-bottom: 40px;
+}
+
+.courses .container .boxes .box ul {
+    list-style: none;
+}
+
+.courses .container .boxes .box ul li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgb(68, 114, 0);
+}
+
+.courses .container .boxes .box div {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgb(68, 114, 0);
+}
+
+.courses .container .boxes .box .image {
+    padding: 1px;
+}
+
+.courses .container .boxes .box .image img {
+    width: 100%;
+    height: 250px;
+    border-radius: 0;
+}
+
+.courses .container .boxes .box .price {
+    font-size: 50px;
+    position: relative;
+    color: rgb(232, 159, 161);
+}
+
+.courses .container .boxes .box .learn a{
+    display: block;
+    padding: 20px;
+    margin: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(34, 34, 78);
+    color: white;
+    text-decoration: none;
+    transition: var(--main-transition);
+}
+
+.courses .container .boxes .box .learn a:hover {
+    color: aqua;
+    background-color: chocolate;
+}
+
+/* end courses  */
+
+/* start email  */
+
+.email {
+    position: relative;
+    background-color: rgb(34, 34, 78);
+}
+
+.email .container {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 10px;
+    text-align: center;
+}
+
+.email .container form {
+    padding: 50px 0px;
+    line-height: 1.8;
+}
+
+.email .container form input[type="submit"] {
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgb(47, 94, 0);
+    color: aqua;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.email .container form input[type="email"]{
+   max-width: 600px;
+   height: 50px;
+   background-color: var(--main-grey);
+   padding: 10px;
+   color: aqua;
+}
+
+.email .container form textarea {
+   width: 600px;
+   height: 400px;
+   background-color: var(--main-grey);
+   padding: 10px;
+   color: aqua;
+}
+
+@media(max-width:767px){
+    .email .container form textarea {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+/* end email  */
+
+/* start footer  */
+
+footer {
+    position: relative;
+    padding-top: 50px;
+    background-color: rgb(88, 21, 48);
+    text-align: center;
+}
+
+footer div {
+    padding: 25px;
+}
+
+footer a {
+    color: aqua;
+}
+
+/* end footer  */
+
+/* start animation  */
+
+
+
+/* end animation  */
